@@ -1,0 +1,178 @@
+/*************** THE LAYOUT ******************************
+**********************************************************/
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html {
+    height: 100%; // The height of your html document takes 100% size of window
+}
+
+body {
+    height: 100%; // Body takes 100% height of html which is 100% height of window
+}
+
+.container {
+    height: 100%; // Container takes 100% height of body which is 100% height of html which is 100% of window
+}
+
+body {
+    background-color: #eeeded;
+    width: 100%;
+    height: 100%;
+}
+
+.main-header {
+    grid-area: header;
+}
+
+.main-nav {
+    grid-area: nav;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.content {
+    grid-area: content;
+    padding: 10px;
+}
+
+.ad {
+    grid-area: ad;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 0.5fr 5.5fr;
+    grid-template-areas: "header" "nav" "content" "ad" "sidebar" "footer";
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+@media only screen and (min-device-width: 425px) and (max-device-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: 65% 35%;
+        grid-template-rows: 2fr 1fr 5.5fr 5.5fr;
+        grid-template-areas: "header header" "nav nav" "content sidebar" "content ad" "footer footer";
+    }
+    .main-header {
+        font-size: 4.5em;
+        text-align: center;
+    }
+    nav ul li a {
+        font-size: 0.7em;
+    }
+    .content {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 33.3% 33.3% 33.3%;
+        grid-template-areas: "postPreview postpreview postPreview";
+        gap: 10px;
+    }
+    .postPreview h4 {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-device-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        grid-template-rows: 2fr 0.8fr 9.2fr;
+        grid-template-areas: "header header header" "nav nav nav" "ad content sidebar" "footer footer footer";
+    }
+    .main-header {
+        font-size: 5em;
+        text-align: center;
+    }
+}
+
+
+/*************** Template design *************************
+**********************************************************/
+
+.main-header {
+    font-size: 3.5em;
+    text-align: center;
+}
+
+.main-header span {
+    font-family: 'East Sea Dokdo', cursive;
+}
+
+.main-header a {
+    text-decoration: none;
+}
+
+.mr {
+    color: #892cdc;
+}
+
+.lazy {
+    color: #52057b;
+}
+
+nav {
+    background-color: #222831;
+    width: 100%;
+    height: 100%;
+}
+
+nav:hover {
+    border: snow;
+}
+
+nav ul {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: inline-flex;
+    column-gap: 8px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+nav ul li {
+    align-items: stretch;
+    margin-top: 10px;
+    transition: all 0.1s;
+}
+
+nav ul li a {
+    height: 100%;
+    font-size: 0.9em;
+    color: #e8e8e8;
+    text-decoration: none;
+}
+
+nav ul li:hover {
+    transform: scale(1.3) rotate(-7deg);
+}
+
+.postPreview {
+    padding: 20px;
+    background-color: tan;
+}
+
+.postPreview h4 {
+    padding: 5px;
+    font-size: 2em;
+}
+
+.postPreview img {
+    width: 100%;
+}
